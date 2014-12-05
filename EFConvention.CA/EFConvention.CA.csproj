@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBC60597-E92E-43DC-8EFD-379E0C95F9B2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EFConvention.CA</RootNamespace>
+    <AssemblyName>EFConvention.CA</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaxHampton.RandomNameGenerator">
+      <HintPath>..\packages\MaxHampton.RandomNameGenerator.1.0.2\lib\MaxHampton.RandomNameGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201412050809119_InitialCreate.cs" />
+    <Compile Include="Migrations\201412050809119_InitialCreate.Designer.cs">
+      <DependentUpon>201412050809119_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412050815077_Change_Conventions.cs" />
+    <Compile Include="Migrations\201412050815077_Change_Conventions.Designer.cs">
+      <DependentUpon>201412050815077_Change_Conventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412050821364_Add_Contact_Person_Entity.cs" />
+    <Compile Include="Migrations\201412050821364_Add_Contact_Person_Entity.Designer.cs">
+      <DependentUpon>201412050821364_Add_Contact_Person_Entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412050828053_Remove_City_Property_From_Address.cs" />
+    <Compile Include="Migrations\201412050828053_Remove_City_Property_From_Address.Designer.cs">
+      <DependentUpon>201412050828053_Remove_City_Property_From_Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412050838262_Change_Model.cs" />
+    <Compile Include="Migrations\201412050838262_Change_Model.Designer.cs">
+      <DependentUpon>201412050838262_Change_Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412050857568_Reso.cs" />
+    <Compile Include="Migrations\201412050857568_Reso.Designer.cs">
+      <DependentUpon>201412050857568_Reso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Conventions\AddressConfiguration.cs" />
+    <Compile Include="Model\Conventions\ContactPersonConfiguration.cs" />
+    <Compile Include="Model\Conventions\CustomerConfiguration.cs" />
+    <Compile Include="Model\Entities\Address.cs" />
+    <Compile Include="Model\Entities\ContactPerson.cs" />
+    <Compile Include="Model\Entities\Customer.cs" />
+    <Compile Include="Model\EFConventionContext.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201412050809119_InitialCreate.resx">
+      <DependentUpon>201412050809119_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412050815077_Change_Conventions.resx">
+      <DependentUpon>201412050815077_Change_Conventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412050821364_Add_Contact_Person_Entity.resx">
+      <DependentUpon>201412050821364_Add_Contact_Person_Entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412050828053_Remove_City_Property_From_Address.resx">
+      <DependentUpon>201412050828053_Remove_City_Property_From_Address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412050838262_Change_Model.resx">
+      <DependentUpon>201412050838262_Change_Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412050857568_Reso.resx">
+      <DependentUpon>201412050857568_Reso.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
